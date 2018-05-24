@@ -1,6 +1,6 @@
 package com.lin.ms.service.impl;
 
-import com.lin.ms.service.redis.RedisCacheService;
+import com.lin.ms.dao.redisDao.RedisCacheService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

@@ -1,7 +1,4 @@
-package com.lin.ms.service.redis;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
+package com.lin.ms.dao.redisDao;
 
 /**
  * Created by linyan on 2018/5/16.
