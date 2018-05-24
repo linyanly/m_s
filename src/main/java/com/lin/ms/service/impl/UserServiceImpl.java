@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author ly
  * @since 2018-05-24
  */
-@Service
+@Service("userServiceImpl")
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 	
 }
