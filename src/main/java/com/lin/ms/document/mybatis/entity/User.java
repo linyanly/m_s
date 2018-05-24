@@ -1,4 +1,4 @@
-package com.lin.ms.domain.mybatis.entity;
+package com.lin.ms.document.mybatis.entity;
 
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.util.Date;

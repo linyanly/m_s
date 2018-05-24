@@ -3,7 +3,7 @@ package com.lin.ms.service.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.lin.ms.dao.mybatisDao.UserMapper;
-import com.lin.ms.domain.mybatis.entity.User;
+import com.lin.ms.document.mybatis.entity.User;
 import com.lin.ms.service.IUserService;
 import org.springframework.stereotype.Service;
 

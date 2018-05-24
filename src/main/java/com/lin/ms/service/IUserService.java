@@ -2,7 +2,7 @@ package com.lin.ms.service;
 
 
 import com.baomidou.mybatisplus.service.IService;
-import com.lin.ms.domain.mybatis.entity.User;
+import com.lin.ms.document.mybatis.entity.User;
 
 /**
  * <p>
