@@ -1,4 +1,4 @@
-package com.lin.ms.dao.redisDao.impl;
+package com.lin.ms.service.impl;
 
 import com.lin.ms.dao.redisDao.RedisCacheService;
 import lombok.extern.slf4j.Slf4j;
