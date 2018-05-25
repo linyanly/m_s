@@ -1,24 +1,25 @@
 package com.lin.ms.dao.redisDao;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by linyan on 2018/5/16.
  */
 public interface RedisCacheService {
 
 	/**
-	 * 以ky对形式存储
+	 * 放置
 	 * @param key
 	 * @param data
+	 * @param second
 	 * @param <T>
 	 */
-	public <T> void put(String key,T data);
+	<T> void put(String key,T data,int second,TimeUnit timeUnit);
 
 	/**
-	 * 取值
+	 * 取出
 	 * @param key
-	 * @param cls
-	 * @param <T>
 	 * @return
 	 */
-	public  <T> T get(String key,Class<T> cls);
+	<T>T get(String key,Class<T> cls);
 }
