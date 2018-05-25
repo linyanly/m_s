@@ -10,6 +10,9 @@
 		<result column="is_admin" property="isAdmin" />
 		<result column="updateTime" property="updateTime" />
 	</resultMap>
+	<select id="selectWithoutPsw" resultType="com.lin.ms.document.mybatis.entity.User">
+		select id,name,is_admin as isAdmin,phone_num as phoneNum,id_card as idCard,update_time as updateTime from t_user
+	</select>
 
 
 </mapper>

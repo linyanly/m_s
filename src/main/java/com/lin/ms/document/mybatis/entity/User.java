@@ -3,6 +3,10 @@ package com.lin.ms.document.mybatis.entity;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 
 
@@ -14,6 +18,7 @@ import java.io.Serializable;
  * @author ly
  * @since 2018-05-24
  */
+@TableName("t_user")
 public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
@@ -26,6 +31,13 @@ public class User extends Model<User> {
      */
 	@TableField("is_admin")
 	private String isAdmin;
+	@TableField("phone_num")
+	private String phoneNum;
+	@TableField("id_card")
+	private String idCard;
+	@TableField("update_time")
+	@JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updateTime;
 
 
