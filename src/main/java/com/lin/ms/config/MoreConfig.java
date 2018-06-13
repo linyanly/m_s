@@ -10,8 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by linyan on 2018/5/24.
  */
 @Configuration
-@MapperScan("com.lin.ms.dao.mybatisDao")//生成Mapper代理类
-@EnableCaching//开启缓存
+@MapperScan("com.lin.ms.dao.mybatis*")//生成Mapper代理类
 public class MoreConfig {
 	/**
 	 * mybatisPlus分页

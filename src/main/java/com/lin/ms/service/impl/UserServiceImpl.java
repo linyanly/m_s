@@ -26,14 +26,17 @@ import java.util.concurrent.TimeUnit;
  */
 @Service("userServiceImpl")
 @Slf4j
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class UserServiceImpl implements IUserService {
 
 	@Autowired
 	private RedisCacheService redisCacheService;
 
+	@Autowired
+	private UserMapper userMapper;
+
 	@Override
 	public List<User> userListWithoutPsw() {
-		List<User> users = baseMapper.selectWithoutPsw();
+		List<User> users = userMapper.selectWithoutPsw();
 		return users;
 	}
 
@@ -43,7 +46,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 		where.setName(userName);
 		where.setPassword(password);
 		try {
-			User user = baseMapper.selectOne(where);
+			User user = userMapper.selectOne(where);
 			if(user != null){
 				user.setPassword(null);
 				String requestedSessionId = request.getRequestedSessionId();
@@ -54,7 +57,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 				return new ResultVo(ResultVo.FAIL_CODE,"用户名或密码不正确");
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("登录失败:{}",e);
 		}
 		return new ResultVo(ResultVo.ERROR_CODE,"系统出错,请联系管理员");
 	}

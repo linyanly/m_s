@@ -17,7 +17,7 @@ import java.util.List;
  * @author ly
  * @since 2018-05-24
  */
-public interface IUserService extends IService<User> {
+public interface IUserService {
 	/**
 	 * 不带密码的list
 	 * @return
