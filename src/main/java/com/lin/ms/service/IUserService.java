@@ -1,10 +1,8 @@
 package com.lin.ms.service;
 
 
-import com.baomidou.mybatisplus.service.IService;
-import com.lin.ms.document.mybatis.entity.User;
-import com.lin.ms.document.mybatis.response.ResultVo;
-import sun.security.util.Password;
+import com.lin.ms.document.entity.User;
+import com.lin.ms.document.response.ResultVo;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

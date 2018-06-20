@@ -3,14 +3,14 @@
 <mapper namespace="com.lin.ms.dao.mybatisDao.UserMapper">
 
 	<!-- 通用查询映射结果 -->
-	<resultMap id="BaseResultMap" type="com.lin.ms.document.mybatis.entity.User">
+	<resultMap id="BaseResultMap" type="com.lin.ms.document.entity.User">
 		<id column="id" property="id" />
 		<result column="name" property="name" />
 		<result column="password" property="password" />
 		<result column="is_admin" property="isAdmin" />
 		<result column="updateTime" property="updateTime" />
 	</resultMap>
-	<select id="selectWithoutPsw" resultType="com.lin.ms.document.mybatis.entity.User">
+	<select id="selectWithoutPsw" resultType="com.lin.ms.document.entity.User">
 		select id,name,is_admin as isAdmin,phone_num as phoneNum,id_card as idCard,update_time as updateTime from t_user
 	</select>
 

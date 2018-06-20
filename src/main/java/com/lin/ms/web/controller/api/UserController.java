@@ -1,7 +1,9 @@
 package com.lin.ms.web.controller.api;
 
-import com.lin.ms.document.mybatis.entity.User;
-import com.lin.ms.document.mybatis.response.ResultVo;
+import com.lin.ms.Common.utils.UserSessionUtils;
+import com.lin.ms.document.entity.User;
+import com.lin.ms.document.redis.CurrentUser;
+import com.lin.ms.document.response.ResultVo;
 import com.lin.ms.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +36,15 @@ public class UserController {
 		ResultVo resultVo = userService.login(request, userName, password);
 		return resultVo;
 	}
+
+
+	@RequestMapping("getUser")
+	public CurrentUser getUserInfo(){
+		CurrentUser userInfo = UserSessionUtils.getCurrentUserInfo();
+		return userInfo;
+	}
+
+
 
 
 }

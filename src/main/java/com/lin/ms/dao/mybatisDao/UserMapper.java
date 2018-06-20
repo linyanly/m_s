@@ -2,7 +2,7 @@ package com.lin.ms.dao.mybatisDao;
 
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.lin.ms.document.mybatis.entity.User;
+import com.lin.ms.document.entity.User;
 
 import java.util.List;
 

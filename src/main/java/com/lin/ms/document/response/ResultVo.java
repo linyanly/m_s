@@ -1,4 +1,4 @@
-package com.lin.ms.document.mybatis.response;
+package com.lin.ms.document.response;
 
 import lombok.Getter;
 import lombok.Setter;

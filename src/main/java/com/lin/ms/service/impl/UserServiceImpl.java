@@ -1,15 +1,14 @@
 package com.lin.ms.service.impl;
 
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.lin.ms.dao.mybatisDao.UserMapper;
 import com.lin.ms.dao.redisDao.RedisCacheService;
-import com.lin.ms.document.mybatis.entity.User;
-import com.lin.ms.document.mybatis.response.ResultVo;
+import com.lin.ms.document.entity.User;
+import com.lin.ms.document.redis.CurrentUser;
+import com.lin.ms.document.response.ResultVo;
 import com.lin.ms.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,8 +49,10 @@ public class UserServiceImpl implements IUserService {
 			if(user != null){
 				user.setPassword(null);
 				String requestedSessionId = request.getRequestedSessionId();
+				CurrentUser currentUser = new CurrentUser();
+				cover2UserInfo(user,currentUser);
 				//把用户信息放到redis
-				redisCacheService.put(requestedSessionId,user,30, TimeUnit.MICROSECONDS);
+				redisCacheService.put(requestedSessionId,currentUser,30, TimeUnit.MICROSECONDS);
 				return new ResultVo(ResultVo.SUCCESS_CODE,"登录成功");
 			}else {
 				return new ResultVo(ResultVo.FAIL_CODE,"用户名或密码不正确");
@@ -60,5 +61,12 @@ public class UserServiceImpl implements IUserService {
 			log.error("登录失败:{}",e);
 		}
 		return new ResultVo(ResultVo.ERROR_CODE,"系统出错,请联系管理员");
+	}
+
+	private void cover2UserInfo(User user, CurrentUser currentUser) {
+		currentUser.setUserName(user.getName());
+		currentUser.setIsAdmin(user.getIsAdmin());
+		currentUser.getUrl().add("1");
+		currentUser.getUrl().add("2");
 	}
 }
