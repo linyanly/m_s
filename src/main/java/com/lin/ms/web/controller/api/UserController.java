@@ -30,8 +30,6 @@ public class UserController {
 
 	@RequestMapping("login")
 	public ResultVo login(HttpServletRequest request,String userName,String password){
-		userName = "admin";
-		password = "root";
 
 		ResultVo resultVo = userService.login(request, userName, password);
 		return resultVo;
