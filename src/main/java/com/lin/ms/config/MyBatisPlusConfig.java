@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @MapperScan("com.lin.ms.dao.mybatis*")//生成Mapper代理类
-public class MoreConfig {
+public class MyBatisPlusConfig {
 	/**
 	 * mybatisPlus分页
 	 * @return
