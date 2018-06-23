@@ -76,7 +76,7 @@
           type:"post",
           success:function (data) {
               if(data.code = '0'){
-                  window.location.href="index.html"
+                  window.location.href="/static/view/index.html"
               }else {
                 $(".warn-msg").html(data.msg);
                 $(".alert-warning").show();

@@ -27,6 +27,7 @@ public class WebAppConfig implements WebMvcConfigurer{
 		excludes.add("/static/**");
 		excludes.add("/error");
 		excludes.add("/api/user/login");
+		excludes.add("/login");
 
 		registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(excludes);
 	}
