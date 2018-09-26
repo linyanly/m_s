@@ -81,6 +81,20 @@ public class UserServiceImpl implements IUserService {
 		return new ResultVo(ResultVo.ERROR_CODE,"系统出错,请联系管理员");
 	}
 
+	@Override
+	public String testAspect() {
+		System.out.println("开始了.........");
+		int a = 1/0;
+		return "AAAA";
+	}
+
+	@Override
+	public String fuckAspect(String type) {
+		System.out.println("开始了.....");
+		int a = 1/0;
+		return "bbbb";
+	}
+
 	private void exchangeUserInfo(User user, CurrentUser currentUser) {
 		Set<String> urls = permissionService.findUrlsByUserId(user.getId());
 		currentUser.setUserId(user.getId());

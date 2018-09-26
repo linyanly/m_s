@@ -23,4 +23,8 @@ public interface IUserService {
 	List<User> userListWithoutPsw();
 
 	ResultVo login(HttpServletRequest request,String userName,String password);
+
+	String testAspect();
+
+	String fuckAspect(String type);
 }
